@@ -1,6 +1,6 @@
 <?php
 
-namespace usy4\CreaditFlip;
+namespace usy4\CreditFlip;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
