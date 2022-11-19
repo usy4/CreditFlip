@@ -1,7 +1,7 @@
-name: CreditFlip
+name: CreditsFlip
 author: usy4
 api: [4.0.0]
 version: 1.0.0
-main: usy4\CreditFlip\Main
-descriptions: try your luck with /creditflip
+main: usy4\CreditsFlip\Main
+descriptions: try your luck with /creditsflip
 depend: Credits

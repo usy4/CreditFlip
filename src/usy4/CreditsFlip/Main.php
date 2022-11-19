@@ -1,11 +1,11 @@
 <?php
 
-namespace usy4\CreaditFlip;
+namespace usy4\CreditsFlip;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 
-use usy4/CreditFlip/commands/CreditFlipCommand;
+use usy4\CreditsFlip\commands\CreditsFlipCommand;
 
 class Main extends PluginBase {
     
@@ -14,10 +14,10 @@ class Main extends PluginBase {
     public function onEnable(): void{
 
        $this->credits = $this->getServer()->getPluginManager()->getPlugin("Credits");
-       $this->getServer()->getCommandMap()->register($this->getName(), new CreditFlipCommand($this)); 
+       $this->getServer()->getCommandMap()->register($this->getName(), new CreditsFlipCommand($this)); 
     }
    
-    public function TailsOrHeads{
+    public function TailsOrHeads(){
         return mt_rand(0,1);
     } // 0=tails, 1=heads.
 
