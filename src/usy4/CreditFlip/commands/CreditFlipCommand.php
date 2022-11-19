@@ -42,11 +42,20 @@ class CreditFlipCommand extends Command implements PluginOwned
 			return;
 		}
 		
-		if(count($args) < 2) return $sender->sendMessage("Usage: /creditflip (tails/heads) amount");
+		if(count($args) < 2) {
+                  $sender->sendMessage("Usage: /creditflip (tails/heads) amount");
+                  return;
+                }
 
-                if(!is_numeric($args[2])) return $sender->sendMessage("The amount must to be a number.");
+                if(!is_numeric($args[2])){
+                  $sender->sendMessage("The amount must to be a number.");
+                  return;
+                }
 
-                if($args[2] > $this->plugin->getCredits($sender)) return $sender->sendMessage("Sorry, but you don't have that much credit");
+                if($args[2] > $this->plugin->getCredits($sender)) {
+                  $sender->sendMessage("Sorry, but you don't have that much credit");
+                  return;
+                }
 
                 switch(strtolower($args[1])){
                  case "tails":
