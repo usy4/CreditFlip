@@ -5,7 +5,7 @@ namespace usy4\CreaditFlip;
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 
-use usy4/CreditFlip/Commands/CreditFlipCommand;
+use usy4/CreditFlip/commands/CreditFlipCommand;
 
 class Main extends PluginBase {
     
