@@ -47,35 +47,35 @@ class CreditFlipCommand extends Command implements PluginOwned
                   return;
                 }
 
-                if(!is_numeric($args[2])){
+                if(!is_numeric($args[1])){
                   $sender->sendMessage("The amount must to be a number.");
                   return;
                 }
 
-                if($args[2] > $this->plugin->getCredits($sender)) {
+                if($args[1] > $this->plugin->getCredits($sender)) {
                   $sender->sendMessage("Sorry, but you don't have that much credit");
                   return;
                 }
 
-                switch(strtolower($args[1])){
+                switch(strtolower($args[0])){
                  case "tails":
                   if($this->plugin->TailsOrHeads() !== 0){
-                   $this->plugin->reduceCredits($sender, intval($args[2]));
-                   $sender->sendMessage("It's 'heads', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   $this->plugin->reduceCredits($sender, intval($args[1]));
+                   $sender->sendMessage("It's 'heads', You lost §c-".$args[1]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                    return;
                   }
-                   $this->plugin->addCredits($sender, intval($args[2]));
-                   $sender->sendMessage("It's 'tails', You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   $this->plugin->addCredits($sender, intval($args[1]));
+                   $sender->sendMessage("It's 'tails', You won §a+".$args[1]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   break;
 
                  case "heads":
                   if($this->plugin->TailsOrHeads() !== 1){
-                   $this->plugin->reduceCredits($sender, intval($args[2]));
-                   $sender->sendMessage("It's 'tails', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   $this->plugin->reduceCredits($sender, intval($args[1]));
+                   $sender->sendMessage("It's 'tails', You lost §c-".$args[1]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                    return;
                   }
-                   $this->plugin->addCredits($sender, intval($args[2]));
-                   $sender->sendMessage("It's 'heads', You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   $this->plugin->addCredits($sender, intval($args[1]));
+                   $sender->sendMessage("It's 'heads', You won §a+".$args[1]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   break;
                 default:
                   $sender->sendMessage("Usage: /creditflip (tails/heads) amount");
