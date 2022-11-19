@@ -17,9 +17,9 @@ class Main extends PluginBase {
        $this->getServer()->getCommandMap()->register($this->getName(), new SuggestionsCommand($this)); 
     }
    
-    public function TrailsOrHeads{
+    public function TailsOrHeads{
         return mt_rand(0,1);
-    } // 0=trails, 1=heads.
+    } // 0=tails, 1=heads.
 
     public function getCredits(Player $player){
         return $this->credits->reducedCredits($player);
