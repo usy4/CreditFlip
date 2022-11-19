@@ -1,7 +1,7 @@
-# CreditFlip
+# CreditsFlip
 Try your luck in credits with this plugin!
 # Commands
-Usage: `/creditflip (tails/heads) (amount/all)`
+Usage: `/creditsflip (tails/heads) (amount/all)`
 # Depend
 https://poggit.pmmp.io/p/Credits
 # My Discord
