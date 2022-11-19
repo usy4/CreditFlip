@@ -50,7 +50,7 @@ class CreditFlipCommand extends Command implements PluginOwned
 
                 switch($args[1]){
                  case "trails";
-                  if($this->plugin->TrailsOrHeads() !== 0){
+                  if($this->plugin->TailsOrHeads() !== 0){
                    $this->plugin->reduceCredits($sender, intval($args[2]));
                    return $sender->sendMessage("You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   }
@@ -59,7 +59,7 @@ class CreditFlipCommand extends Command implements PluginOwned
                   break:
 
                  case "heads";
-                  if($this->plugin->TrailsOrHeads() !== 1){
+                  if($this->plugin->TailsOrHeads() !== 1){
                    $this->plugin->reduceCredits($sender, intval($args[2]));
                    return $sender->sendMessage("You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   }
