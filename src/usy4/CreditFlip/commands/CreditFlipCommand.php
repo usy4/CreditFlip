@@ -49,26 +49,26 @@ class CreditFlipCommand extends Command implements PluginOwned
                 if($args[2] > $this->plugin->getCredits($sender)) return $sender->sendMessage("Sorry, but you don't have that much credit");
 
                 switch(strtolower($args[1])){
-                 case "tails";
+                 case "tails":
                   if($this->plugin->TailsOrHeads() !== 0){
                    $this->plugin->reduceCredits($sender, intval($args[2]));
                    return $sender->sendMessage("It's 'heads', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   }
                    $this->plugin->addCredits($sender, intval($args[2]));
                    $sender->sendMessage("It's 'tails', You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
-                  break:
+                  break;
 
-                 case "heads";
+                 case "heads":
                   if($this->plugin->TailsOrHeads() !== 1){
                    $this->plugin->reduceCredits($sender, intval($args[2]));
                    return $sender->sendMessage("It's 'tails', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   }
                    $this->plugin->addCredits($sender, intval($args[2]));
                    $sender->sendMessage("It's 'heads', You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
-                  break:
-                default;
+                  break;
+                default:
                   $sender->sendMessage("Usage: /creditflip (tails/heads) amount");
-                 break:
+                 break;
                 }
 	}
 	
