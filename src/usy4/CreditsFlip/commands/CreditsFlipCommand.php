@@ -1,6 +1,6 @@
 <?php 
 
-namespace usy4\CreditFlip\commands;
+namespace usy4\CreditsFlip\commands;
 
 /*  
  *  A plugin for PocketMine-MP.
@@ -26,14 +26,14 @@ use pocketmine\plugin\PluginOwned;
 use pocketmine\plugin\Plugin;
 use pocketmine\player\Player;
 
-use usy4\CreditFlip\Main;
+use usy4\CreditsFlip\Main;
 
-class CreditFlipCommand extends Command implements PluginOwned
+class CreditsFlipCommand extends Command implements PluginOwned
 {
 	public function __construct(
 		public Main $plugin
 	) {
-		parent::__construct("creditflip", "don't be scared, try your luck", null, ["creditsflip", "cf"]);
+		parent::__construct("creditsflip", "don't be scared, try your luck", null, ["cf"]);
 	}
 	
 	public function execute(CommandSender $sender, string $commandLabel, array $args) {
@@ -43,7 +43,7 @@ class CreditFlipCommand extends Command implements PluginOwned
 		}
 		
 		if(count($args) < 2) {
-                  $sender->sendMessage("Usage: /creditflip (tails/heads) (amount/all)");
+                  $sender->sendMessage("Usage: /creditsflip (tails/heads) (amount/all)");
                   return;
                 }
                  
@@ -86,7 +86,7 @@ class CreditFlipCommand extends Command implements PluginOwned
                    $sender->sendMessage("It's 'heads', You won §a+".$amount."\n§rNow, you have §7".$this->plugin->getCredits($sender));
                   break;
                 default:
-                  $sender->sendMessage("Usage: /creditflip (tails/heads) (amount/all)");
+                  $sender->sendMessage("Usage: /creditsflip (tails/heads) (amount/all)");
                  break;
                 }
 	}
