@@ -5,7 +5,7 @@ namespace usy4\CreditsFlip;
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 
-use usy4\CreditsFlip\commands\CreditFlipCommand;
+use usy4\CreditsFlip\commands\CreditsFlipCommand;
 
 class Main extends PluginBase {
     
@@ -14,7 +14,7 @@ class Main extends PluginBase {
     public function onEnable(): void{
 
        $this->credits = $this->getServer()->getPluginManager()->getPlugin("Credits");
-       $this->getServer()->getCommandMap()->register($this->getName(), new CreditFlipCommand($this)); 
+       $this->getServer()->getCommandMap()->register($this->getName(), new CreditsFlipCommand($this)); 
     }
    
     public function TailsOrHeads(){
