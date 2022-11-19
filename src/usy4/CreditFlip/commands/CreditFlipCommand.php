@@ -43,7 +43,7 @@ class CreditFlipCommand extends Command implements PluginOwned
 		}
 		
 		if(count($args) < 2) {
-                  $sender->sendMessage("Usage: /creditflip (tails/heads) amount");
+                  $sender->sendMessage("Usage: /creditflip (tails/heads) (amount/all)");
                   return;
                 }
                  
@@ -86,7 +86,7 @@ class CreditFlipCommand extends Command implements PluginOwned
                    $sender->sendMessage("It's 'heads', You won §a+".$amount."\n§rNow, you have ".$this->plugin->getCredits($sender));
                   break;
                 default:
-                  $sender->sendMessage("Usage: /creditflip (tails/heads) amount");
+                  $sender->sendMessage("Usage: /creditflip (tails/heads) (amount/all)");
                  break;
                 }
 	}
