@@ -1,6 +1,6 @@
 <?php 
 
-namespace usy4\Suggestions\commands;
+namespace usy4\CreditFlip\commands;
 
 /*  
  *  A plugin for PocketMine-MP.
@@ -44,10 +44,31 @@ class CreditFlipCommand extends Command implements PluginOwned
 		
 		if(count($args) < 2) return $sender->sendMessage("Usage: /creditflip (trails/heads) amount");
 
+                if(!is_numeric($args[2])) return $sender->sendMessage("The amount must to be a number.");
+
+                if($args[2] > $this->plugin->getCredits($sender)) return $sender->sendMessage("Sorry, but you don't have that much credit");
+
                 switch($args[1]){
-                case "trails";
-                
-                break:
+                 case "trails";
+                  if($this->plugin->TrailsOrHeads() !== 0){
+                   $this->plugin->reduceCredits($sender, intval($args[2]));
+                   return $sender->sendMessage("You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                  }
+                   $this->plugin->addCredits($sender, intval($args[2]));
+                   $sender->sendMessage("You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                  break:
+
+                 case "heads";
+                  if($this->plugin->TrailsOrHeads() !== 1){
+                   $this->plugin->reduceCredits($sender, intval($args[2]));
+                   return $sender->sendMessage("You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                  }
+                   $this->plugin->addCredits($sender, intval($args[2]));
+                   $sender->sendMessage("You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                  break:
+                default;
+                  $sender->sendMessage("Usage: /creditflip (trails/heads) amount");
+                 break:
                 }
 	}
 	
