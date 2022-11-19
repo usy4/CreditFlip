@@ -1,11 +1,10 @@
 <?php
 
-
 namespace usy4\CreaditFlip;
 
 use pocketmine\plugin\PluginBase;
 
-use usy4/CreditFlip/CreditFlipCommand;
+use usy4/CreditFlip/Commands/CreditFlipCommand;
 
 class Main extends PluginBase {
     
@@ -17,5 +16,4 @@ class Main extends PluginBase {
         return mt_rand(0,1);
     } // 0=trails, 1=heads.
  
-
 }
