@@ -17,7 +17,7 @@ class Main extends PluginBase {
        $this->getServer()->getCommandMap()->register($this->getName(), new CreditFlipCommand($this)); 
     }
    
-    public function TailsOrHeads{
+    public function TailsOrHeads(){
         return mt_rand(0,1);
     } // 0=tails, 1=heads.
 
