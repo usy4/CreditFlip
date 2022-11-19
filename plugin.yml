@@ -1,0 +1,7 @@
+name: CreditFlip
+author: usy4
+api: [4.0.0]
+version: 1.0.0
+main: usy4\CreditFlip\Main
+descriptions: try your luck with /creditflip
+depend [Credits]
