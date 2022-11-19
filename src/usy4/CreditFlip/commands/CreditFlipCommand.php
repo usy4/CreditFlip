@@ -52,7 +52,8 @@ class CreditFlipCommand extends Command implements PluginOwned
                  case "tails":
                   if($this->plugin->TailsOrHeads() !== 0){
                    $this->plugin->reduceCredits($sender, intval($args[2]));
-                   return $sender->sendMessage("It's 'heads', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   $sender->sendMessage("It's 'heads', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   return;
                   }
                    $this->plugin->addCredits($sender, intval($args[2]));
                    $sender->sendMessage("It's 'tails', You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
@@ -61,7 +62,8 @@ class CreditFlipCommand extends Command implements PluginOwned
                  case "heads":
                   if($this->plugin->TailsOrHeads() !== 1){
                    $this->plugin->reduceCredits($sender, intval($args[2]));
-                   return $sender->sendMessage("It's 'tails', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   $sender->sendMessage("It's 'tails', You lost §c-".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
+                   return;
                   }
                    $this->plugin->addCredits($sender, intval($args[2]));
                    $sender->sendMessage("It's 'heads', You won §a+".$args[2]."\n§rNow, you have ".$this->plugin->getCredits($sender));
