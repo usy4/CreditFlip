@@ -1,11 +1,11 @@
 <?php
 
-namespace usy4\CreditFlip;
+namespace usy4\CreditsFlip;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 
-use usy4\CreditFlip\commands\CreditFlipCommand;
+use usy4\CreditsFlip\commands\CreditFlipCommand;
 
 class Main extends PluginBase {
     
