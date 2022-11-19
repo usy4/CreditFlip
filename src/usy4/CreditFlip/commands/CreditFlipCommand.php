@@ -60,7 +60,7 @@ class CreditFlipCommand extends Command implements PluginOwned
                    $amount = $args[1];
                 }
                 
-                if($args[1] > $this->plugin->getCredits($sender)) {
+                if($amount > $this->plugin->getCredits($sender)) {
                   $sender->sendMessage("Sorry, but you don't have that much credit");
                   return;
                 }
