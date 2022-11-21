@@ -3,6 +3,7 @@ Try your luck in credits with this plugin!
 # Commands
 Usage: `/creditsflip (tails/heads) (amount/all)`
 # Depend
+Download this to use my plugin:
 https://poggit.pmmp.io/p/Credits
 # My Discord
 <a
